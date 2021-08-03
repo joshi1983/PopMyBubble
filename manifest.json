@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"version": "1.0",
+	"name": "Pop My Bubble",
+	"description": "Remove unwanted Bubble.io ads in facebook!",
+	"icons": {
+		"16": "images/pop-my-bubble-16.png",
+		"48": "images/pop-my-bubble-48.png",
+		"128": "images/pop-my-bubble-128.png"
+	},
+	"browser_action": {
+		"default_icon": "images/pop-my-bubble-256.png",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [{
+		"matches": ["*://*.facebook.com/*"],
+		"js": ["content.js"]
+	}],
+	"background": {
+		"scripts": ["content.js"],
+		"persistent": false
+	}
+}
